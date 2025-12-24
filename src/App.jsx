@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './components/login'
-import Reg from './components/reg'
+import Reg from './components/Reg'
 import Nav from './components/Nav'
 import Ct from './components/Ct'
 import { useState } from 'react'
