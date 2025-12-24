@@ -1,0 +1,1361 @@
+*{
+    margin:0;
+    padding:0;
+}
+.con{
+    width: 100%;
+    gap: 50px;
+}
+.nav{
+    background-color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+}
+.nav p{
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.nav a:hover{
+   color: crimson;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Base Styling ===== */
+body {
+  background: linear-gradient(135deg, #eef2f3, #d9e4f5);
+}
+
+/* ===== Container ===== */
+.app-container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 25px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Title ===== */
+.page-title {
+  text-align: center;
+  color: #1f2d3d;
+  margin-bottom: 30px;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Table Card ===== */
+.table-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ===== Table ===== */
+.app-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.app-table th {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.app-table td {
+  padding: 12px;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.app-table tr:last-child td {
+  border-bottom: none;
+}
+
+.app-table tr:hover {
+  background-color: #f4f9ff;
+}
+
+/* ===== No Data ===== */
+.no-data {
+  text-align: center;
+  margin-top: 25px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+/* ===== Booking Form Card ===== */
+.form-card {
+  margin-top: 45px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h3 {
+  margin-bottom: 20px;
+  color: #1f2d3d;
+  font-size: 22px;
+}
+
+/* ===== Labels ===== */
+.form-card p {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ===== Inputs ===== */
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;   /* ✅ FIX */
+}
+
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+  outline: none;
+}
+
+/* ===== Button ===== */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.4);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 650px) {
+  .page-title {
+    font-size: 26px;
+  }
+
+  .form-card {
+    padding: 18px;
+  }
+}
+
+
+
+
+/* ===== Global Box Fix ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== Login Page Container ===== */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Login Card ===== */
+.login-card {
+  background: #ffffff;
+  padding: 35px;
+  width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* ===== Message / Heading ===== */
+.login-card h1 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #2c3e50;
+  min-height: 24px;
+}
+
+/* ===== Input Fields ===== */
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.25);
+}
+
+/* ===== Login Button ===== */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 400px) {
+  .login-card {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+
+
+/* ===== Global Reset & Box Fix ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Registration Page Background ===== */
+.reg-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Registration Card ===== */
+.reg-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 35px 30px;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Message / Heading ===== */
+.reg-card h1 {
+  text-align: center;
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  min-height: 28px;            /* prevents layout jump */
+}
+
+/* ===== Input & Select Fields ===== */
+.reg-input,
+.reg-select {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* ===== First Field Spacing Fix ===== */
+.reg-input:first-of-type {
+  margin-top: 2px;
+}
+
+/* ===== Focus Effect ===== */
+.reg-input:focus,
+.reg-select:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.25);
+}
+
+/* ===== Register Button ===== */
+.reg-btn {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reg-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 198, 255, 0.45);
+}
+
+.reg-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .reg-card {
+    width: 92%;
+    padding: 25px 20px;
+  }
+}
+
+
+/* ===== Navbar Container ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 25px;
+  background: linear-gradient(135deg, #0f1011, #00c6ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Navbar Links ===== */
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* ===== Hover Effect ===== */
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ===== Active Link (Optional) ===== */
+.nav a:active {
+  transform: translateY(0);
+}
+
+/* ===== Logged-in User Text ===== */
+.nav p {
+  margin-left: auto;
+  margin-right: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav a:last-child:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav p {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+
+
+
+/* ===== Patient Dashboard Container ===== */
+.patient-db {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Heading ===== */
+.patient-db h1 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 26px;
+}
+
+/* ===== Dashboard Links ===== */
+.patient-db a {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 20px;
+  width: 70%;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Hover Effect ===== */
+.patient-db a:hover {
+  background: linear-gradient(135deg, #00c6ff, #4facfe);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Active Click ===== */
+.patient-db a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .patient-db {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  .patient-db a {
+    width: 100%;
+  }
+}
+
+
+
+/* ===== Doctor Appointments Container ===== */
+.doc-appoint {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Table Styling ===== */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.doc-table th {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.doc-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.doc-table tr:hover {
+  background-color: #f4f9ff;
+}
+
+/* ===== Approve Button ===== */
+.approve-btn {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.approve-btn:hover {
+  background: linear-gradient(135deg, #00c6ff, #4facfe);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 198, 255, 0.35);
+}
+
+.approve-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .doc-appoint {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .doc-table th,
+  .doc-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .approve-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
+
+/* ===== Prescription Card Container ===== */
+.prec-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ===== Hover Effect ===== */
+.prec-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Paragraph Styling ===== */
+.prec-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+/* ===== Bold Labels ===== */
+.prec-card p::before {
+  content: attr(data-label);
+  font-weight: 600;
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+  .prec-card {
+    padding: 15px 20px;
+    margin: 15px 10px;
+  }
+
+  .prec-card p {
+    font-size: 14px;
+  }
+}
+
+
+
+/* ===== Doctor Dashboard Container ===== */
+.doctor-db {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Links Styling ===== */
+.doctor-db a {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 20px;
+  width: 70%;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Hover Effect ===== */
+.doctor-db a:hover {
+  background: linear-gradient(135deg, #00c6ff, #4facfe);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Active Click ===== */
+.doctor-db a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .doctor-db {
+    padding: 20px;
+    margin: 30px 15px;
+  }
+
+  .doctor-db a {
+    width: 100%;
+  }
+}
+
+
+/* ===== Card Container ===== */
+.doc-sug-pres-card {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ===== Hover Effect ===== */
+.doc-sug-pres-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Card Heading ===== */
+.doc-sug-pres-card h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* ===== Card Paragraphs ===== */
+.doc-sug-pres-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #34495e;
+}
+
+/* ===== Bold Labels for Better Readability ===== */
+.doc-sug-pres-card p::before {
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .doc-sug-pres-card {
+    padding: 15px 20px;
+    margin: 15px 10px;
+  }
+
+  .doc-sug-pres-card h3 {
+    font-size: 16px;
+  }
+
+  .doc-sug-pres-card p {
+    font-size: 14px;
+  }
+}
+
+
+/* Container */
+.create-prec-container {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Headings / labels */
+.create-prec-container p {
+  margin: 14px 0 6px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Inputs & Select */
+.create-prec-container input,
+.create-prec-container select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* Focus effect */
+.create-prec-container input:focus,
+.create-prec-container select:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.25);
+}
+
+/* Button */
+.create-prec-container button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover */
+.create-prec-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 198, 255, 0.45);
+}
+
+/* Button active */
+.create-prec-container button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .create-prec-container {
+    margin: 25px 15px;
+    padding: 22px 18px;
+  }
+}
+
+
+
+
+/* Page layout */
+.page {
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+.card h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.form-grid input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-grid input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Button */
+.btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4338ca;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead {
+  background: #4f46e5;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Empty state */
+.empty {
+  color: #777;
+  font-style: italic;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+
+.add-patient {
+  max-width: 900px;
+  margin: auto;
+  color: #5984e3;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+
+
+.reception-appoint {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Card style for inner divs */
+.reception-appoint > div {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+.reception-appoint p,
+.reception-appoint h2 {
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Inputs & selects */
+.reception-appoint input,
+.reception-appoint select {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  background: #f8fafc;
+  font-size: 14px;
+}
+
+.reception-appoint input:focus,
+.reception-appoint select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+/* Buttons */
+.reception-appoint .btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.reception-appoint .btn:hover {
+  opacity: 0.9;
+}
+
+/* Table */
+.reception-appoint table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 15px;
+}
+
+/* Table header row */
+.reception-appoint table tr:first-child th {
+  background: #1e293b;
+  color: white;
+  padding: 12px;
+  border: none;
+  text-align: left;
+}
+
+/* Table rows */
+.reception-appoint table tr:not(:first-child) {
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+.reception-appoint table tr:not(:first-child):hover {
+  background: #eef2ff;
+}
+
+/* Table cells */
+.reception-appoint table td {
+  padding: 12px;
+  color: #334155;
+  font-size: 14px;
+}
+
+/* Status dropdown */
+.reception-appoint table td select {
+  width: 130px;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* Delete button */
+.reception-appoint table td .btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  padding: 8px 12px;
+}
+
+/* =================== Responsive =================== */
+
+/* Small tablets / large phones */
+@media (max-width: 900px) {
+  .reception-appoint > div {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .reception-appoint table td,
+  .reception-appoint table th {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .reception-appoint table td select {
+    width: 100px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .reception-appoint {
+    padding: 15px;
+  }
+
+  .reception-appoint > div {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .reception-appoint table {
+    display: block;
+    overflow-x: auto;
+    min-width: 100%;
+  }
+
+  .reception-appoint table td,
+  .reception-appoint table th {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .reception-appoint .btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+  }
+
+  .reception-appoint table td select {
+    width: 100%;
+  }
+}
+
+
+/* Receptionist Page Container */
+.receptionist-container {
+  padding: 30px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Table Styling */
+.receptionist-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+/* Header Row */
+.receptionist-table th {
+  background-color: #1976d2;
+  color: #ffffff;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Table Cells */
+.receptionist-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Alternate Rows */
+.receptionist-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+.receptionist-table tr:hover {
+  background-color: #eef4ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+/* Extra fields for Doctor (Experience & Fee) */
+.doctor-extra {
+ 
+  font-weight: 500;
+}
+
+.doctor-extra::placeholder {
+  color: #555;
+  font-size: 13px;
+}
+
+.doctor-extra:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(25, 118, 210, 0.4);
+}
+
+
+/* Container */
+.adminusers-container {
+  padding: 30px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Empty message */
+.adminusers-empty {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Wrapper for responsiveness */
+.adminusers-table-wrapper {
+  overflow-x: auto;
+}
+
+/* Table */
+.adminusers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.adminusers-table th {
+  background-color: #1976d2;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Cells */
+.adminusers-table td {
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Alternate rows */
+.adminusers-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover */
+.adminusers-table tr:hover {
+  background-color: #eef4ff;
+}
+
+/* Delete button */
+.adminusers-delete-btn {
+  padding: 6px 12px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.adminusers-delete-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .adminusers-table th,
+  .adminusers-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .adminusers-delete-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+
+/* Main container */
+.adminpen-container {
+  padding: 30px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Empty state */
+.adminpen-empty {
+  text-align: center;
+  color: #555;
+  font-size: 22px;
+  margin-top: 60px;
+}
+
+/* Table wrapper for mobile scroll */
+.adminpen-table-wrapper {
+  overflow-x: auto;
+}
+
+/* Table */
+.adminpen-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.adminpen-table th {
+  background-color: #0096b8;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Table cells */
+.adminpen-table td {
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Zebra rows */
+.adminpen-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover */
+.adminpen-table tr:hover {
+  background-color: #e8f5e9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .adminpen-table th,
+  .adminpen-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .adminpen-empty {
+    font-size: 18px;
+  }
+}
+
+
+/* Dashboard container */
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.admin-dashboard-title {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Cards wrapper */
+.admin-dashboard-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Dashboard cards */
+.admin-dashboard-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.admin-dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  background-color: #1565c0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .admin-dashboard {
+    padding: 20px;
+  }
+
+  .admin-dashboard-title {
+    font-size: 22px;
+  }
+
+  .admin-dashboard-card {
+    height: 120px;
+    font-size: 16px;
+  }
+}
