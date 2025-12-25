@@ -52,7 +52,7 @@ const Docappoint = () => {
                 <button
                   className="approve-btn"
                   onClick={() =>
-                    axios.post("http://localhost:5000/updateappoints", { pid: e.pid, status: "approved" }).then(() => setF(!f))
+                    axios.post("https://hsptlmngbackend.onrender.com/updateappoints", { pid: e.pid, status: "approved" }).then(() => setF(!f))
                       .catch((err) => console.log(err))
                   }
                 >

@@ -38,6 +38,7 @@ const Myappoint = () => {
 
     let book=()=>{
       axios.post("https://hsptlmngbackend.onrender.com/bookappoint",info).then((res)=>{
+        setInfo({"pid":obj.state._id,"did":"","date":"","time":""})
         setF(!f)
     })}
 

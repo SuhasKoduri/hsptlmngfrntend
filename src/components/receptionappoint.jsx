@@ -79,7 +79,7 @@ const Receptionappoint = () => {
         <p>Select Time</p>
         <input type="time" name="time" onChange={fun} value={data.time}/>
         <button className='btn' onClick={()=>{
-            axios.post("http://localhost:5000/receptionappoint",data).then((res)=>{
+            axios.post("https://hsptlmngbackend.onrender.com/receptionappoint",data).then((res)=>{
                 setF(!f)
                 setData({did:"",pid:"",date:"",time:""})
             })
