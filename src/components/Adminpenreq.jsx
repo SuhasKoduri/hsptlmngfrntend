@@ -7,36 +7,45 @@ const Adminpenreq = () => {
     let [data,setData]=useState([])
     let obj=useContext(Ct)
     let navigate=useNavigate()
+    let [f,setF]=useState(false)
 
     useEffect(() => {
         if (obj.state.role !== "admin" || obj.state.token == "") {
           navigate("/")
         }
-        axios.get("https://hsptlmngbackend.onrender.com/getpenapp").then((res)=>{
-            console.log(res.data)
-            setData(res.data)
-        })
       },[])
 
+      useEffect(()=>{
+        axios.get("https://hsptlmngbackend.onrender.com/getpenapprovals").then((res)=>{
+            setData(res.data)
+        })
+      },[f])
+      let func=(id)=>{
+        axios.get(`https://hsptlmngbackend.onrender.com/accreq/${id}`).then(()=>{
+            setF(!f)
+        })
+      }
   return (
     <div className="adminpen-container">
         {
             
             data.length>0 && <div className="adminpen-table-wrapper"> <table className="adminpen-table" border={1}>
                 <tr>
-                    <th>Doctor ID</th>
-                    <th>Patient ID</th>
-                    <th>Date</th>
-                    <th>Time</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Request</th>
+                    <th>Action</th>
                 </tr>
                 {
                     data.map((obj)=>{
                         return(
                             <tr>
-                                <td>{obj.did}</td>
-                                <td>{obj.pid}</td>
-                                <td>{obj.date}</td>
-                                <td>{obj.time}</td>
+                                <td>{obj._id}</td>
+                                <td>{obj.name}</td>
+                                <td>{obj.role}</td>
+                                <td>{obj.request}</td>
+                                <td> <button onClick={()=>func(obj._id)}>APPROVE</button> </td>
                             </tr>
                         )
                     })
