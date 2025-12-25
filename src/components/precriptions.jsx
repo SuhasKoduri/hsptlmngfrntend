@@ -32,6 +32,9 @@ const Precriptions = () => {
                 </div>)
             })
         }
+        {
+          data.length==0 && <h2 className="no-prescriptions">NO PRECRIPTIONS ARE SUGGESTED YET</h2>
+        }
     </div>
   )
 }

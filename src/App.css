@@ -1359,3 +1359,12 @@ tbody tr:hover {
     font-size: 16px;
   }
 }
+
+.no-prescriptions {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280; /* gray */
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
