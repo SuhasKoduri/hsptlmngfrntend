@@ -8,10 +8,10 @@ let navigate=useNavigate()
 let obj=useContext(Ct)
 
     useEffect(() => {
-    if (obj.state.role !== "doctor" || obj.state.token == "") {
-      navigate("/")
-    }
-  },[])
+    const token = obj?.state?.token
+    const role = obj?.state?.role
+    if (!token || role !== "doctor") navigate("/")
+  },[obj?.state?.token, obj?.state?.role, navigate])
 
   return (
     <div className="doctor-db">

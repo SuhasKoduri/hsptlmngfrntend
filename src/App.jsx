@@ -3,7 +3,7 @@ import Login from './components/login'
 import Reg from './components/Reg'
 import Nav from './components/Nav'
 import Ct from './components/Ct'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PatientDb from './components/PatientDb'
 import DoctorDb from './components/DoctorDb'
 import AdminDashBoard from './components/AdminDashBoard'
@@ -21,12 +21,35 @@ import Adminusers from './components/Adminusers'
 import Admindocs from './components/Admindocs'
 import Adminpenreq from './components/Adminpenreq'
 const App = () => {
-  let [state,setstate]=useState({"token":"","name":"","role":"","_id":""})
+  let [state,setstate]=useState(() => {
+    try{
+      const stored = localStorage.getItem('ct')
+      return stored ? JSON.parse(stored) : {"token":"","name":"","role":"","_id":""}
+    }catch(e){
+      return {"token":"","name":"","role":"","_id":""}
+    }
+  })
+
   let stateUpd = (obj) => {
-    setstate(prev => ({ ...prev, ...obj }));
-    console.log(state);
+    setstate(prev => {
+      const next = { ...prev, ...obj }
+      try{ localStorage.setItem('ct', JSON.stringify(next)) }catch(e){}
+      return next
+    })
   };
   let obj={"state":state,"stateUpd":stateUpd}
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key === 'ct') {
+        try {
+          const next = e.newValue ? JSON.parse(e.newValue) : { token: '', name: '', role: '', _id: '' }
+          setstate(next)
+        } catch (err) { }
+      }
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
+  }, [])
   return (
     <div className='con'>
       <BrowserRouter>

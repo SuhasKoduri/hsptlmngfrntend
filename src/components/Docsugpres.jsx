@@ -11,10 +11,10 @@ const Docsugpres = () => {
     let navigate=useNavigate()
 
     useEffect(() => {
-    if (obj.state.role !== "doctor" || obj.state.token == "") {
-      navigate("/")
-    }
-  },[])
+    const token = obj?.state?.token
+    const role = obj?.state?.role
+    if (!token || role !== "doctor") navigate("/")
+  },[obj?.state?.token, obj?.state?.role, navigate])
 
 
     useEffect(() => {

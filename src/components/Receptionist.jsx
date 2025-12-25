@@ -11,15 +11,15 @@ const Receptionist = () => {
   let [data,setData]=useState([])
 
   useEffect(() => {
-      if (obj.state.role !== "recptionist" || obj.state.token == "") {
-        navigate("/")
-      }
+      const token = obj?.state?.token
+      const role = obj?.state?.role
+      if (!token || role !== "recptionist") navigate("/")
       else{
         axios.get("https://hsptlmngbackend.onrender.com/allprec").then((res)=>{
           setData(res.data)
         })
       }
-    },[])
+    },[obj?.state?.token, obj?.state?.role, navigate])
 
 
   return (

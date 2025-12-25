@@ -7,10 +7,10 @@ const PatientDb = () => {
   let obj=useContext(Ct)
 
   useEffect(() => {
-      if (obj.state.role !== "patient" || obj.state.token == "") {
-        navigate("/")
-      }
-    },[])
+      const token = obj?.state?.token
+      const role = obj?.state?.role
+      if (!token || role !== "patient") navigate("/")
+    },[obj?.state?.token, obj?.state?.role, navigate])
 
 
   return (

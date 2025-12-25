@@ -10,10 +10,10 @@ const Docappoint = () => {
     let navigate=useNavigate()
     let [data1,setData1]=useState([])
     useEffect(() => {
-    if (obj.state.role !== "doctor" || obj.state.token == "") {
-      navigate("/")
-    }
-  },[])
+    const token = obj?.state?.token
+    const role = obj?.state?.role
+    if (!token || role !== "doctor") navigate("/")
+  },[obj?.state?.token, obj?.state?.role, navigate])
   
 
     useEffect(()=>{

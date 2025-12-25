@@ -29,11 +29,11 @@ const Receptionappoint = () => {
 };
 
 
-  useEffect(() => {
-      if (obj.state.role !== "recptionist" || obj.state.token == "") {
-        navigate("/")
-      }
-    },[])
+    useEffect(() => {
+            const token = obj?.state?.token
+            const role = obj?.state?.role
+            if (!token || role !== "recptionist") navigate("/")
+        },[obj?.state?.token, obj?.state?.role, navigate])
 
     useEffect(()=>{
         axios.get("https://hsptlmngbackend.onrender.com/receptionpat").then((res)=>{

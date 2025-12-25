@@ -6,8 +6,9 @@ const Logout = () => {
     let navigate=useNavigate()
     let obj=useContext(Ct)
     useEffect(()=>{
-        obj.stateUpd({"token":"","name":"","role":"","_id":""})
-        navigate("/")
+      try{ localStorage.removeItem('ct') }catch(e){}
+      obj.stateUpd({"token":"","name":"","role":"","_id":""})
+      navigate("/")
     },[])
   return (
     <div>

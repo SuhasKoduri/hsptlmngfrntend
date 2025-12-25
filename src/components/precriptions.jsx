@@ -8,10 +8,10 @@ const Precriptions = () => {
     let navigate=useNavigate()
 
     useEffect(() => {
-    if (obj.state.role !== "patient" || obj.state.token == "") {
-      navigate("/")
-    }
-  },[])
+    const token = obj?.state?.token
+    const role = obj?.state?.role
+    if (!token || role !== "patient") navigate("/")
+  },[obj?.state?.token, obj?.state?.role, navigate])
 
     useEffect(()=>{
         axios.get(`https://hsptlmngbackend.onrender.com/getprec/${obj.state._id}`).then((res)=>{

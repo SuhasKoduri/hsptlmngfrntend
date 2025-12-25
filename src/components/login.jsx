@@ -10,22 +10,14 @@ const Login = () => {
 
 
     useEffect(() => {
-    if (obj.state.role == "doctor" || obj.state.token != "") {
-      navigate("/doctordashboard")
-    }
-    else if (obj.state.role == "patient" || obj.state.token != "") {
-      navigate("/patientdashboard")
-    }
-    else if (obj.state.role == "admin" || obj.state.token != "") {
-      navigate("/admindashboard")
-    }
-    else if (obj.state.role == "recptionist" || obj.state.token != "") {
-      navigate("/recptionist")
-    }
-    else{
-        navigate("/")
-    }
-  },[])
+    const token = obj?.state?.token
+      const role = obj?.state?.role
+      if (!token) return
+      if (role === "doctor") navigate("/doctordashboard")
+      else if (role === "patient") navigate("/patientdashboard")
+      else if (role === "admin") navigate("/admindashboard")
+      else if (role === "recptionist") navigate("/recptionist")
+    }, [obj?.state?.token, obj?.state?.role])
 
     let fun=(e)=>{
         let{name,value}=e.target
@@ -33,7 +25,10 @@ const Login = () => {
     }
     let login=()=>{
         axios.post("https://hsptlmngbackend.onrender.com/login",data).then((res)=>{
-            obj.stateUpd(res.data)
+        try{
+          localStorage.setItem('ct', JSON.stringify(res.data))
+        }catch(e){ }
+        obj.stateUpd(res.data)
             setMsg(res.data.msg)
             if(res.data.role=="patient"){
                 navigate("/patientdashboard")

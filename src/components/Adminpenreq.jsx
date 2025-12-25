@@ -9,11 +9,11 @@ const Adminpenreq = () => {
     let navigate=useNavigate()
     let [f,setF]=useState(false)
 
-    useEffect(() => {
-        if (obj.state.role !== "admin" || obj.state.token == "") {
-          navigate("/")
-        }
-      },[])
+        useEffect(() => {
+                const token = obj?.state?.token
+                const role = obj?.state?.role
+                if (!token || role !== "admin") navigate("/")
+            },[obj?.state?.token, obj?.state?.role, navigate])
 
       useEffect(()=>{
         axios.get("https://hsptlmngbackend.onrender.com/getpenapprovals").then((res)=>{
