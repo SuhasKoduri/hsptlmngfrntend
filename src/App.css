@@ -134,7 +134,9 @@ body {
   background: linear-gradient(135deg, #eef2f3, #d9e4f5);
 }
 
-/* ===== Container ===== */
+/* ================= My Appointments Page ================= */
+
+/* Page container */
 .app-container {
   max-width: 950px;
   margin: 40px auto;
@@ -142,58 +144,104 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/* ===== Title ===== */
+/* Page title */
 .page-title {
   text-align: center;
   color: #1f2d3d;
   margin-bottom: 30px;
   font-size: 32px;
-  letter-spacing: 0.5px;
 }
 
-/* ===== Table Card ===== */
-.table-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-}
+/* ================= TABLE STYLES ================= */
 
-/* ===== Table ===== */
+/* Table base */
+/* ===== My Appointments Table ===== */
 .app-table {
   width: 100%;
   border-collapse: collapse;
+  background: #ffffff;
 }
 
+/* Header */
 .app-table th {
   background: linear-gradient(135deg, #4facfe, #00c6ff);
   color: white;
-  padding: 14px;
-  font-size: 15px;
-}
-
-.app-table td {
   padding: 12px;
+  font-size: 14px;
   text-align: center;
-  color: #333;
-  border-bottom: 1px solid #eee;
 }
 
-.app-table tr:last-child td {
-  border-bottom: none;
+/* Cells */
+.app-table td {
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
 }
 
+/* Hover */
 .app-table tr:hover {
-  background-color: #f4f9ff;
+  background: #f4f9ff;
 }
 
-/* ===== No Data ===== */
+/* ===== My Appointments Table Scroll (ONLY TABLE) ===== */
+@media (max-width: 768px) {
+  .app-table {
+    min-width: 800px;   /* force overflow */
+  }
+
+  .app-table {
+    display: table;    /* keep table layout */
+  }
+
+  .app-table {
+    overflow-x: auto;  /* enable scroll */
+  }
+}
+
+
+/* ================= TABLE SCROLL (ONLY TABLE) ================= */
+
+@media (max-width: 900px) {
+  .app-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .app-table th,
+  .app-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* ===== TABLE SCROLL (ONLY TABLE) ===== */
+@media (max-width: 768px) {
+  .app-table {
+    display: block;          /* REQUIRED */
+    overflow-x: auto;        /* REQUIRED */
+    white-space: nowrap;     /* REQUIRED */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .app-table {
+    min-width: 600px;
+  }
+}
+
+
+/* ================= EMPTY STATE ================= */
+
 .no-data {
   text-align: center;
-  margin-top: 25px;
-  color: #6c757d;
+  margin-top: 30px;
+  color: #6b7280;
   font-size: 18px;
 }
+
 
 /* ===== Booking Form Card ===== */
 .form-card {
