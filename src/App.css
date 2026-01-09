@@ -522,80 +522,114 @@ body {
 
 /* ===== Doctor Appointments Container ===== */
 .doc-appoint {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 25px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/* ===== Table Styling ===== */
+/* ===== Table ===== */
 .doc-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  min-width: 750px; /* IMPORTANT for scroll */
+}
+
+/* Header */
+.doc-table thead {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: #ffffff;
 }
 
 .doc-table th {
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
-  padding: 12px;
-  text-align: center;
+  padding: 14px;
   font-size: 15px;
+  text-align: center;
+  white-space: nowrap;
 }
 
+/* Cells */
 .doc-table td {
   padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
   font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.doc-table tr:hover {
+/* Hover row */
+.doc-table tbody tr:hover {
   background-color: #f4f9ff;
 }
 
 /* ===== Approve Button ===== */
 .approve-btn {
-  padding: 6px 12px;
+  padding: 6px 14px;
   background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: #ffffff;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
+  color: #ffffff;
   font-size: 14px;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .approve-btn:hover {
-  background: linear-gradient(135deg, #00c6ff, #4facfe);
   transform: translateY(-1px);
-  box-shadow: 0 6px 15px rgba(0, 198, 255, 0.35);
+  box-shadow: 0 6px 14px rgba(0, 198, 255, 0.35);
 }
 
 .approve-btn:active {
   transform: translateY(0);
-  box-shadow: none;
+}
+.empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 18px;
+  margin-top: 40px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+
+/* ===== Responsive Scroll Wrapper ===== */
+@media (max-width: 900px) {
   .doc-appoint {
-    padding: 20px;
+    padding: 18px;
     margin: 20px;
+  }
+
+  .doc-appoint {
+    overflow-x: auto;
   }
 
   .doc-table th,
   .doc-table td {
-    padding: 10px;
     font-size: 13px;
+    padding: 10px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc-appoint {
+    padding: 15px;
+  }
+
+  .doc-table {
+    min-width: 900px; /* forces horizontal scroll */
+  }
+
+  .doc-table th,
+  .doc-table td {
+    font-size: 12px;
+    padding: 8px;
   }
 
   .approve-btn {
-    padding: 5px 10px;
-    font-size: 13px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
 }
 
