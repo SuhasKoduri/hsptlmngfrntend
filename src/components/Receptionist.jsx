@@ -39,13 +39,13 @@ const Receptionist = () => {
         data.map((obj)=>{
           return(
             <tr className="receptionist-row">
-              <td>{obj.did}</td>
-              <td>{obj.pid}</td>
-              <td>{obj.diagonsis}</td>
-              <td>{obj.medicines}</td>
-              <td>{obj.dosage}</td>
-              <td>{obj.duration}</td>
-              <td>{obj.notes}</td>
+              <td data-label="Doctor ID">{obj.did}</td>
+              <td data-label="Patient ID">{obj.pid}</td>
+              <td data-label="Diagnosis">{obj.diagonsis}</td>
+              <td data-label="Medicine">{obj.medicines}</td>
+              <td data-label="Dosage">{obj.dosage}</td>
+              <td data-label="Duration">{obj.duration}</td>
+              <td data-label="Notes">{obj.notes}</td>
               </tr>
           )
         })

@@ -43,11 +43,11 @@ const Docappoint = () => {
       <tbody>
         {data.map((e) => (
           <tr key={e._id}>
-            <td>{e.pid}</td>
-            <td>{e.date}</td>
-            <td>{e.time}</td>
-            <td>{e.status}</td>
-            <td>
+            <td data-label="Patient ID">{e.pid}</td>
+            <td data-label="Date">{e.date}</td>
+            <td data-label="Time">{e.time}</td>
+            <td data-label="Status">{e.status}</td>
+            <td data-label="Action">
               {e.status === "pending" && (
                 <button
                   className="approve-btn"
@@ -65,11 +65,11 @@ const Docappoint = () => {
 
         {data1.map((e) => (
           <tr key={e._id}>
-            <td>{e._id}</td>
-            <td>{e.date}</td>
-            <td>{e.time}</td>
-            <td>{e.status}</td>
-            <td>
+            <td data-label="Patient ID">{e._id}</td>
+            <td data-label="Date">{e.date}</td>
+            <td data-label="Time">{e.time}</td>
+            <td data-label="Status">{e.status}</td>
+            <td data-label="Action">
               {e.status === "pending" && (
                 <button className="approve-btn" onClick={() => {axios.post("http://localhost:5000/updateappoint", { _id: e._id, status: "approved" }).then(() => setF(!f))
       .catch((err) => console.log(err));
