@@ -47,7 +47,8 @@ const Myappoint = () => {
     <div className="app-container">
       <h1 className="page-title">My Appointments</h1>
       {
-        data.length>0 && <table border={1} className="app-table">
+        data.length>0 &&<div className="table-scroll">
+         <table border={1} className="app-table">
                   <tr>
                     <th>Doctor ID</th>
                     <th>Date</th>
@@ -65,6 +66,7 @@ const Myappoint = () => {
                     })
                   }
                 </table>
+                </div>
         }
         {
           data.length==0 && <h3 className="no-data">No Appointments Booked</h3>

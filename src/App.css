@@ -153,93 +153,71 @@ body {
 }
 
 /* ================= TABLE STYLES ================= */
+/* ================= TABLE WRAPPER ================= */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;          /* ONLY this scrolls */
+  -webkit-overflow-scrolling: touch;
+}
 
-/* Table base */
-/* ===== My Appointments Table ===== */
+/* ================= TABLE BASE ================= */
 .app-table {
   width: 100%;
   border-collapse: collapse;
   background: #ffffff;
 }
 
-/* Header */
+/* ================= TABLE HEADER ================= */
 .app-table th {
   background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
+  color: #ffffff;
   padding: 12px;
   font-size: 14px;
   text-align: center;
+  white-space: nowrap;
 }
 
-/* Cells */
+/* ================= TABLE CELLS ================= */
 .app-table td {
   padding: 10px;
   font-size: 13px;
   text-align: center;
+  color: #333;
   border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
 }
 
-/* Hover */
-.app-table tr:hover {
+/* ================= ROW HOVER ================= */
+.app-table tbody tr:hover {
   background: #f4f9ff;
 }
 
-/* ===== My Appointments Table Scroll (ONLY TABLE) ===== */
+/* ================= RESPONSIVE (TABLE ONLY) ================= */
+
+/* Tablets & phones */
 @media (max-width: 768px) {
   .app-table {
-    min-width: 800px;   /* force overflow */
-  }
-
-  .app-table {
-    display: table;    /* keep table layout */
-  }
-
-  .app-table {
-    overflow-x: auto;  /* enable scroll */
-  }
-}
-
-
-/* ================= TABLE SCROLL (ONLY TABLE) ================= */
-
-@media (max-width: 900px) {
-  .app-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+    min-width: 800px;   /* forces horizontal scrollbar */
   }
 
   .app-table th,
   .app-table td {
-    font-size: 13px;
-    padding: 10px;
+    font-size: 12px;
+    padding: 8px;
   }
 }
 
-/* ===== TABLE SCROLL (ONLY TABLE) ===== */
-@media (max-width: 768px) {
-  .app-table {
-    display: block;          /* REQUIRED */
-    overflow-x: auto;        /* REQUIRED */
-    white-space: nowrap;     /* REQUIRED */
-  }
-}
-
-
+/* Very small phones */
 @media (max-width: 480px) {
   .app-table {
-    min-width: 600px;
+    min-width: 900px;
   }
-}
 
-
-/* ================= EMPTY STATE ================= */
-
-.no-data {
-  text-align: center;
-  margin-top: 30px;
-  color: #6b7280;
-  font-size: 18px;
+  .app-table th,
+  .app-table td {
+    font-size: 11px;
+    padding: 6px;
+  }
 }
 
 
