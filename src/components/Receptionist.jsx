@@ -24,35 +24,32 @@ const Receptionist = () => {
 
   return (
     <div className="receptionist-container">
-      {
-        <table className="receptionist-table">
-          <tr className="receptionist-header">
-            <th>DOCTOR ID</th>
-            <th>PATIENT ID</th>
-            <th>DIAGONSIS</th>
-            <th>MEDICINE</th>
-            <th>DOSAGE</th>
-            <th>DURATION</th>
-            <th>NOTES</th>
-          </tr>
-      {
-        data.map((obj)=>{
-          return(
-            <tr className="receptionist-row">
-              <td data-label="Doctor ID">{obj.did}</td>
-              <td data-label="Patient ID">{obj.pid}</td>
-              <td data-label="Diagnosis">{obj.diagonsis}</td>
-              <td data-label="Medicine">{obj.medicines}</td>
-              <td data-label="Dosage">{obj.dosage}</td>
-              <td data-label="Duration">{obj.duration}</td>
-              <td data-label="Notes">{obj.notes}</td>
-              </tr>
-          )
-        })
-      }
-      </table>
-    }
-    </div>
+  <div className="table-scroll">
+    <table className="receptionist-table">
+      <tr className="receptionist-header">
+        <th>DOCTOR ID</th>
+        <th>PATIENT ID</th>
+        <th>DIAGONSIS</th>
+        <th>MEDICINE</th>
+        <th>DOSAGE</th>
+        <th>DURATION</th>
+        <th>NOTES</th>
+      </tr>
+
+      {data.map((obj) => (
+        <tr className="receptionist-row" key={obj._id}>
+          <td>{obj.did}</td>
+          <td>{obj.pid}</td>
+          <td>{obj.diagonsis}</td>
+          <td>{obj.medicines}</td>
+          <td>{obj.dosage}</td>
+          <td>{obj.duration}</td>
+          <td>{obj.notes}</td>
+        </tr>
+      ))}
+    </table>
+  </div>
+</div>
   )
 }
 

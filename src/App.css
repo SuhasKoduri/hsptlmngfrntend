@@ -894,9 +894,8 @@ body {
 }
 
 table {
-  width: 100%;
+ width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
 }
 
 thead {
@@ -1053,169 +1052,45 @@ tbody tr:hover {
   padding: 8px 12px;
 }
 
-/* =================== Responsive =================== */
+/* ================= RESPONSIVE TABLE SCROLL ================= */
 
-/* Small tablets / large phones */
-@media (max-width: 900px) {
-  .reception-appoint > div {
-    padding: 20px;
-    margin: 15px;
-  }
-
-  .reception-appoint table td,
-  .reception-appoint table th {
-    padding: 10px;
-    font-size: 13px;
-  }
-
-  .reception-appoint table td select {
-    width: 100px;
-  }
-}
-
-/* Phones */
-@media (max-width: 600px) {
-  .reception-appoint {
-    padding: 15px;
-  }
-
-  .reception-appoint > div {
-    padding: 15px;
-    margin: 10px;
-  }
-
-  .reception-appoint table {
-    display: block;
-    overflow-x: auto;
-    min-width: 100%;
-  }
-
-  .reception-appoint table td,
-  .reception-appoint table th {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .reception-appoint .btn {
-    width: 100%;
-    padding: 10px;
-    margin-top: 12px;
-  }
-
-  .reception-appoint table td select {
-    width: 100%;
-  }
-}
-
-
-/* Receptionist Page Container */
+/* Wrapper handles horizontal scroll */
 .receptionist-container {
-  padding: 30px;
-  background-color: #f4f6f9;
-  min-height: 100vh;
+  overflow-x: auto;
 }
 
-/* Table Styling */
+/* Keep table width large */
 .receptionist-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  font-family: Arial, sans-serif;
+  min-width: 900px;
 }
 
-/* Header Row */
-.receptionist-table th {
-  background-color: #1976d2;
-  color: #ffffff;
-  padding: 12px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* Table Cells */
-.receptionist-table td {
-  padding: 10px;
-  text-align: center;
-  font-size: 13px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* Alternate Rows */
-.receptionist-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Hover Effect */
-.receptionist-table tr:hover {
-  background-color: #eef4ff;
-  transition: background-color 0.2s ease-in-out;
-}
-
+/* Mobile & Tablet */
 @media (max-width: 768px) {
   .receptionist-container {
     padding: 15px;
   }
 
-  /* Make table horizontally scrollable */
-  .receptionist-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
   .receptionist-table th,
   .receptionist-table td {
     font-size: 12px;
     padding: 8px;
+    white-space: nowrap;
   }
 }
 
+/* Very small devices */
 @media (max-width: 480px) {
-  .receptionist-table,
-  .receptionist-table thead,
-  .receptionist-table tbody,
-  .receptionist-table th,
-  .receptionist-table td,
-  .receptionist-table tr {
-    display: block;
-    width: 100%;
-  }
-
-  /* Hide table header */
-  .receptionist-table th {
-    display: none;
-  }
-
-  /* Card style rows */
-  .receptionist-table tr {
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    background: #ffffff;
+  .receptionist-container {
     padding: 10px;
   }
 
+  .receptionist-table th,
   .receptionist-table td {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 10px;
-    font-size: 13px;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: left;
-  }
-
-  .receptionist-table td:last-child {
-    border-bottom: none;
-  }
-
-  /* Labels */
-  .receptionist-table td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #475569;
+    font-size: 11px;
+    padding: 6px;
   }
 }
+
 
 
 /* Extra fields for Doctor (Experience & Fee) */
@@ -1438,6 +1313,12 @@ tbody tr:hover {
   background-color: #1565c0;
 }
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .admin-dashboard {
@@ -1463,86 +1344,31 @@ tbody tr:hover {
   text-transform: uppercase;
 }
 
-
-@media (max-width: 480px) {
-  .doc-table,
-  .doc-table thead,
-  .doc-table tbody,
-  .doc-table th,
-  .doc-table td,
-  .doc-table tr {
-    display: block;
-    width: 100%;
+@media (max-width: 768px) {
+  .table-scroll {
+    -webkit-overflow-scrolling: touch;
   }
 
-  .doc-table thead {
-    display: none;
-  }
-
-  .doc-table tr {
-    background: #ffffff;
-    margin-bottom: 15px;
+  .receptionist-container {
     padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
 
-  .doc-table td {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 6px;
-    font-size: 13px;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: left;
-  }
-
-  .doc-table td:last-child {
-    border-bottom: none;
-  }
-
-  .doc-table td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #475569;
-  }
-
-  .approve-btn {
-    margin-top: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  .doc-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .doc-table th,
-  .doc-table td {
+  .receptionist-table th,
+  .receptionist-table td {
     font-size: 12px;
-    padding: 8px;
-  }
-
-  .approve-btn {
-    width: 100%;
     padding: 8px;
   }
 }
 
-@media (max-width: 900px) {
-  .doc-appoint {
-    padding: 20px;
+/* Small phones */
+@media (max-width: 480px) {
+  .receptionist-table {
+    min-width: 1100px;
   }
 
-  .doc-table th,
-  .doc-table td {
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .approve-btn {
-    padding: 6px 12px;
-    font-size: 12px;
+  .receptionist-table th,
+  .receptionist-table td {
+    font-size: 11px;
+    padding: 6px;
   }
 }
