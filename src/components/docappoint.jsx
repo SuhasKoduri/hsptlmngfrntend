@@ -8,7 +8,6 @@ const Docappoint = () => {
     let[data,setData]=useState([])
     let[f,setF]=useState(false)
     let navigate=useNavigate()
-    let [data1,setData1]=useState([])
     useEffect(() => {
     const token = obj?.state?.token
     const role = obj?.state?.role
@@ -21,15 +20,9 @@ const Docappoint = () => {
             setData(res.data)
         })},[f])
 
-
-        useEffect(()=>{
-        axios.get(`https://hsptlmngbackend.onrender.com/receptionpat/${obj.state._id}`).then((res)=>{
-            setData1(res.data)
-        })},[f])
-
   return (
     <div className="doc-appoint">
-  {data.length + data1.length > 0 ? (
+  {data.length > 0 ? (
     <table className="doc-table">
       <thead>
         <tr>
@@ -52,7 +45,7 @@ const Docappoint = () => {
                 <button
                   className="approve-btn"
                   onClick={() =>
-                    axios.post("https://hsptlmngbackend.onrender.com/updateappoint", { pid: e.pid, status: "approved" }).then(() => setF(!f))
+                    axios.post("https://hsptlmngbackend.onrender.com/updateappoint", { _id: e._id, status: "approved" }).then(() => setF(!f))
                       .catch((err) => console.log(err))
                   }
                 >
