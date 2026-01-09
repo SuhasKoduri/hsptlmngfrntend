@@ -71,7 +71,7 @@ const Docappoint = () => {
             <td data-label="Status">{e.status}</td>
             <td data-label="Action">
               {e.status === "pending" && (
-                <button className="approve-btn" onClick={() => {axios.post("https://hsptlmngbackend.onrender.com/updateappoints", { _id: e._id, status: "approved" }).then(() => setF(!f))
+                <button className="approve-btn" onClick={() => {axios.post("https://hsptlmngbackend.onrender.com/updateappoints", { pageYOffsetid: e._id, status: "approved" }).then(() => setF(!f))
       .catch((err) => console.log(err));
   }}
 >
